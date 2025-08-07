@@ -1,0 +1,28 @@
+# FastAPI app dependencies
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+
+# Kafka client (async)
+aiokafka==0.10.0
+
+# Redis async
+redis==5.0.4
+
+# Pydantic for data models
+pydantic==2.7.1
+pydantic-settings==2.2.1
+
+# Profanity filter
+better_profanity==0.7.0
+
+# HTTP client
+httpx==0.27.0
+
+# Retry logic
+tenacity==8.2.3
+
+# Typing and tools (optional)
+typing-extensions==4.12.0
+
+# For Docker networking (optional if needed for debugging)
+python-dotenv==1.0.1
