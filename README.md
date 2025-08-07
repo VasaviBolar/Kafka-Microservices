@@ -2,36 +2,35 @@
 
 This project demonstrates a simple microservices architecture using **Apache Kafka** as a message broker and **FastAPI** for building the producer and consumer services.
 
-## 📦 Project Structure
-
 KafkaTest/
-├── kafka_lib/
-|   ├──__init__.py
-│   ├── admin.py              # Kafka topic management
-│   ├── consumer.py           # Kafka consumer client logic (aiokafka-based)
-│   ├── producer.py           # Kafka producer client logic
-│   └── schemas.py            # Pydantic data models for messages
+├── kafka_lib/                        # Shared Kafka logic
+│   ├── __init__.py                   # Init file
+│   ├── admin.py                      # Kafka topic management (creation/config)
+│   ├── consumer.py                   # aiokafka-based consumer logic
+│   ├── producer.py                   # Kafka producer logic
+│   └── schemas.py                    # Pydantic data models for messages
 │
-├── producer_service/
-│   ├── main.py               # FastAPI app for sending messages to Kafka
-│   └── Dockerfile            # Dockerfile for producer service
+├── producer_service/                # Sends messages to Kafka
+│   ├── main.py                       # FastAPI app for producing messages
+│   └── Dockerfile                    # Docker setup for producer
 │
-├── consumer_service/
-│   ├── main.py               # FastAPI app for consuming messages from Kafka
-│   └── Dockerfile            # Dockerfile for consumer service
+├── consumer_service/                # Consumes messages from Kafka
+│   ├── main.py                       # FastAPI app for consuming messages
+│   └── Dockerfile                    # Docker setup for consumer
 │
-├── input_api_service/
-│   ├── main.py               # FastAPI-based chat API integrating all Kafka logic
-│   └── Dockerfile            # Dockerfile for input API service
+├── input_api_service/              # External API gateway
+│   ├── main.py                       # FastAPI app integrating producer/consumer
+│   └── Dockerfile                    # Docker setup for input API
 │
-├── Docker-Kafka/
-│   └── docker-compose-kafka/ #  Standalone Kafka setup
+├── Docker-Kafka/                   # Kafka infrastructure
+│   └── docker-compose-kafka/        # Standalone Kafka-Zookeeper setup
 │
-├── docker-compose.yml        # Main Docker Compose file to orchestrate all services
-├── requirements.txt          # All Python dependencies
-├── restart.bat               # Commands
-├── .gitignore                # Git ignore patterns
-└── README.md                 # Documentation
+├── docker-compose.yml              # Orchestrates all services + Kafka
+├── requirements.txt                # All Python dependencies
+├── restart.bat                     # Batch file for restarting services
+├── .gitignore                      # Ignore unnecessary files/folders
+└── README.md                       # You're reading it!
+
 
 markdown
 Copy
