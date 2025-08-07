@@ -1,7 +1,6 @@
 # Kafka Microservice with FastAPI
 
-This project demonstrates a simple microservices architecture using **Apache Kafka** as a message broker and **FastAPI** for building the producer and consumer services.
-
+This project showcases a robust microservices architecture that leverages the distributed power of ****Apache Kafka** **as a real-time message broker and FastAPI for building high-performance, asynchronous producer and consumer services. Designed to simulate a real-time query-response pipeline (like a chatbot), the system enables decoupled, fault-tolerant communication between services using Kafka topics (query, prompt, answer). Each microservice is containerized using Docker and integrated via Kafka to ensure scalable, event-driven interaction. The architecture supports WebSocket-based inputs, profanity filtering, offset-managed message consumption, and is easily extendable to RAG pipelines, Redis-backed sessions, and multi-user environments.
 ## 🚀 Features
 
 1. Microservice Architecture:
